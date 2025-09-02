@@ -237,7 +237,7 @@ class ONCVPSPOutput:
         )
         kinds = ["full", "pseudo"]
         kwargs = [
-            {"info": {"kind": kind, "i": int(il[0]), "l": int(il[1])}}
+            {"info": {"kind": kind, "i": int(il[0]) if len(il) == 2 else 1, "l": int(il[1]) if len(il) == 2 else int(il[0])}}
             for il in il_pairs
             for kind in kinds
         ]
