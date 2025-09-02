@@ -241,7 +241,7 @@ class ONCVPSPOutput:
             for il in il_pairs
             for kind in kinds
         ]
-        identifiers = ["&    " + il for il in il_pairs for _ in kinds]
+        identifiers = [f"&{il:>6s}" for il in il_pairs for _ in kinds]
         ycols = [kind_col for _ in range(len(il_pairs)) for kind_col in [3, 4]]
         wavefunctions = ONCVPSPOutputDataList.from_str(
             "wavefunctions", content, identifiers, 2, ycols, kwargs
